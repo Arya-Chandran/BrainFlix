@@ -1,0 +1,33 @@
+@use './variables' as *;
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items:center;
+}
+@mixin flex-left {
+  display: flex;
+  justify-content: center;
+  align-items: left;
+}
+
+@mixin relative-padding {
+  padding: $mobile-padding;
+
+  @include tablet {
+      padding: $tablet-padding;
+  }
+} 
+
+
+@mixin tablet {
+  @media screen and (min-width: $tablet-breakpoint) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: $desktop-breakpoint) {
+    @content;
+  }
+}

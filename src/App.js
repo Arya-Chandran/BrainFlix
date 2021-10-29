@@ -1,21 +1,41 @@
-
+import React from "react";
 import "./App.css";
-// import components
-import Header from "./components/Component/Header";
-import VideosList from "./components/Component/VideosList";
-// import CommentsList from "./components/Component/CommentsList";
-
-// import video data
+import Header from "./components/Header/Header";
+import VideosList from "./components/VideosList/VideosList";
 import videosData from "./data/video-details.json";
+import VideoDescription from "./components/VideoDescription/VideoDescription";
 
-function App() {
-  return (
-    <div className="App">
-      <Header />
-      <VideosList videos={videosData} />
-      {/* <CommentsList videos={videosData} /> */}
-    </div>
-  );
+class App extends React.Component {
+  state = {
+    videos: videosData,
+    activeVideo: videosData[0],
+  };
+
+  handleActiveVideo = (id) => {
+    console.log("handleActiveVideo", id);
+    const selectedVideo = this.state.videos.find((video) => {
+      return video.id === id;
+    });
+    console.log(selectedVideo);
+    this.setState({
+      activeVideo: selectedVideo
+    });
+  };
+
+  render() {
+    const { activeVideo } = this.state;
+    console.log(activeVideo);
+    return (
+      <div className="App">
+        <Header />
+        <VideoDescription activeVideo={this.state.activeVideo} />
+        <VideosList
+          videos={this.state.videos}
+          handleActiveVideo={this.handleActiveVideo}
+        />
+      </div>
+    );
+  }
 }
 
 export default App;

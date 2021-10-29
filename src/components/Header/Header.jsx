@@ -6,25 +6,25 @@ import "./Header.scss";
 
 function Header() {
   return (
-    <header className="Header">
-      <div className="Header__wrapper">
+    <header className="header">
+      <div className="header__wrapper">
         <img
-          className="Header__wrapper--logo"
+          className="header__wrapper--logo"
           src={logoSrc}
           alt="BrainFlix logo"
         />
         <img
-          className="Header__wrapper--search"
+          className="header__wrapper--search"
           src={searchSrc}
           alt="Search bar"
         />
         <img
-          className="Header__wrapper--image"
+          className="header__wrapper--image"
           src={imageSrc}
           alt="Mohan muruge"
         />
         <img
-          className="Header__wrapper--upload"
+          className="header__wrapper--upload"
           src={uploadSrc}
           alt="Upload bar"
         />

@@ -1,7 +1,57 @@
-.image {
-    max-width: 100%;
-    height:100px;
-    //object-fit: cover;
-    padding-bottom: 1rem;
-    margin: 0;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.video {
+  display: flex;
+  height: 60px;
+  justify-content: space-between;
+  padding-bottom: 16px;
+
+  &__leftSection {
+    //width: 100%;
+    padding-right: 16px;
+    //flex-wrap: wrap;
+
+    &--image {
+      max-width: 100%;
+      width: 160px;
+      height: 60px;
+      border-radius: 5%;
+      object-fit: cover;
+    }
+  }
+
+  &__rightSection {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    &--title {
+      font-size: 13px;
+      line-height: 18px;
+      font-weight: 700;
+      margin:0;
+      text-align: left;
+
+      @include tablet {
+        font-size: 14px;
+        line-height: 22px;
+      }
+    }
+
+    &--channel {
+      font-size: 13px;
+      line-height: 18px;
+      font-weight: 400;
+      margin:0;
+
+      @include tablet {
+        font-size: 14px;
+        line-height: 22px;
+      }
+    }
+  }
 }

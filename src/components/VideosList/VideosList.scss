@@ -1,14 +1,26 @@
-.VideoList {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.videoList {
+    @include relative-padding;
+    margin:0;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    &__item {
-      width: 100%;
-      @include tablet {
-        width: 30%;
-      }
+    flex-direction: column;
+    align-items:flex-start;
+    list-style: none;
+    
+    &__heading{
+      margin:0;
+      padding:16px 0;
+      text-transform: uppercase;
+      float:left;
+
     }
+    // &__item {
+    //   width: 100%;
+    //   list-style-type: none;
+    //   @include tablet {
+    //     width: 30%;
+    //   }
+    // }
   }

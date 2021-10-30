@@ -1,0 +1,274 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.videoProfile {
+  &__activeVideo {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &__wrapper {
+    @include relative-padding;
+    margin: 0;
+  }
+}
+.videoDetails {
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 700;
+    margin: 0;
+    padding: 16px 0;
+    border-bottom: 1.5px solid $baselight-color;
+    text-align: left;
+
+    @include tablet {
+      font-size: 33px;
+      line-height: 44px;
+    }
+  }
+
+  &__info {
+    display: flex;
+    padding: 16px 0;
+    border-bottom: 1.5px solid $baselight-color;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    padding-right: 64px;
+    text-align: left;
+
+    &--channel {
+      font-size: 13px;
+      line-height: 18px;
+      font-weight: 700;
+
+      padding-bottom: 16px;
+      margin: 0;
+
+      @include tablet {
+        font-size: 14px;
+        line-height: 22px;
+      }
+    }
+
+    &--date {
+      font-size: 13px;
+      line-height: 18px;
+      font-weight: 400;
+      color: $base-color;
+      margin: 0;
+
+      @include tablet {
+        font-size: 14px;
+        line-height: 22px;
+      }
+    }
+  }
+
+  &__container {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__views {
+    display: flex;
+    padding-bottom: 16px;
+
+    &--icon {
+      padding-right: 8px;
+      height: 15px;
+    }
+
+    &--count {
+      font-size: 13px;
+      line-height: 18px;
+      font-weight: 400;
+      color: $base-color;
+      margin: 0;
+
+      @include tablet {
+        font-size: 14px;
+        line-height: 22px;
+      }
+    }
+  }
+
+  &__likes {
+    display: flex;
+
+    &--icon {
+      padding-right: 8px;
+      height: 15px;
+    }
+
+    &--count {
+      font-size: 13px;
+      line-height: 18px;
+      font-weight: 400;
+      color: $base-color;
+      margin: 0;
+
+      @include tablet {
+        font-size: 14px;
+        line-height: 22px;
+      }
+    }
+  }
+
+  &__description {
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 400;
+    text-align: left;
+    padding: 16px 0;
+    color: $primary-color;
+    margin: 0;
+
+    @include tablet {
+      font-size: 14px;
+      line-height: 22px;
+    }
+  }
+}
+
+.comments__heading {
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 700;
+  text-align: left;
+  margin: 0;
+  padding-bottom: 16px;
+}
+
+.comments__form {
+  width: 100%;
+  display: flex;
+
+  @include tablet {
+    padding: 0 3rem;
+  }
+
+  @include desktop {
+    padding-left: 14rem;
+    padding-right: 20rem;
+  }
+
+  &--left {
+    flex: 0 0 20%;
+    padding-top: 2rem;
+    border-bottom: 2px solid $baselight-color;
+
+    @include tablet {
+      flex: 0 0 10%;
+      padding-top: 1.25rem;
+      padding-right: 1rem;
+    }
+  }
+
+  &--image {
+    border-radius: 50%;
+    height: 2.25rem;
+    width: 2.25rem;
+
+    @include tablet {
+      height: 3rem;
+      width: 3rem;
+    }
+  }
+
+  &--right {
+    flex: 0 0 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-bottom: 2px solid $baselight-color;
+
+    @include tablet {
+      flex: 0 0 90%;
+    }
+  }
+
+  &--label-tag {
+    font-size: 0.719rem;
+    line-height: 1.125rem;
+    font-weight: 700;
+    color: $base-color;
+    text-transform: uppercase;
+    padding: 0.25rem 0;
+
+    @include tablet {
+      font-size: 1rem;
+      line-height: 1.375rem;
+      flex: 0 0 25%;
+    }
+  }
+
+  &--text {
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    width: 100%;
+    height: 6.25rem;
+    padding: 0.75rem;
+    margin: 0.25rem 0;
+    box-sizing: border-box;
+    border: 1px solid $baselight-color;
+    border-radius: 0.25rem;
+    resize: none;
+
+    ::placeholder {
+      font-family: "AvenirNext LT Pro";
+      font-size: 0.875rem;
+      line-height: 1.125rem;
+      color: $primary-color;
+
+      @include tablet {
+        font-size: 1rem;
+        line-height: 1.375rem;
+      }
+    }
+
+    @include tablet {
+      font-size: 1rem;
+      line-height: 1.375rem;
+      flex: 0 0 25%;
+    }
+  }
+
+  &--sbtwrapper {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+  }
+
+  &--sbt {
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 700;
+    width: 100%;
+    margin: 1rem 0 0;
+    border-width: 0;
+    border-radius: 0.25rem;
+    padding: 0.2rem 2rem;
+    height: 40px;
+    color: $active-color;
+    background-color: $secondary-color;
+    background-image: url(../../assets/icons/add_comment.svg);
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-position: calc(100% - 190px) center;
+    left: 8px;
+    text-transform: uppercase;
+    text-align: center;
+
+    @include tablet {
+      width: 30%;
+    }
+  }
+}

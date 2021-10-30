@@ -1,30 +1,92 @@
 import React from "react";
 import PropTypes from "prop-types";
 import imageSrc from "../../assets/images/Mohan-muruge.jpg";
-import viewsSrc from "../../assets/icons/views.svg"
-import likeSrc from "../../assets/icons/likes.svg"
-import addCommentSrc from "../../assets/icons/add_comment.svg"
+import viewsSrc from "../../assets/icons/views.svg";
+import likeSrc from "../../assets/icons/likes.svg";
+import addCommentSrc from "../../assets/icons/add_comment.svg";
 import CommentsList from "../CommentList/CommentsList";
+import "./VideoDescription.scss";
 
 const VideoDescription = ({ activeVideo }) => {
-    const {video, title, channel, timestamp,  description, comments} = activeVideo;
+  const {
+    image,
+    video,
+    title,
+    channel,
+    timestamp,
+    views,
+    likes,
+    description,
+    comments,
+  } = activeVideo;
+
   return (
-    <>
-      <video width="750" height="500" controls>
-      <source src={video} type="video/mp4"/>
+    <section class="videoProfile">
+      <video className="videoProfile__activeVideo" controls poster={image}>
+        <source src={video + "?api_key=123"} type="video/mp4" />
       </video>
-      <p>{title}</p>
-      <p>By {channel}</p>
-      <p>{timestamp}</p>
-      <img src={viewsSrc} alt="View Icon" />
-      <img src={likeSrc} alt="Like Icon" />
-      <p>{description}</p>
-      <h3>3 comments</h3>
-      <h2>Join the conversation</h2>
-      <img src={imageSrc} alt="Mohan muruge" />
-      <img src={addCommentSrc} alt="Add comment Icon" />
-      <CommentsList comments={comments} />
-    </>
+      <div className="videoProfile__wrapper">
+        <div className="videoDetails">
+          <h1 className="videoDetails__title">{title}</h1>
+          <div className="videoDetails__info">
+            <div className="videoDetails__content">
+              <p className="videoDetails__content--channel">By {channel}</p>
+              <p className="videoDetails__content--date">{timestamp}</p>
+            </div>
+            <div className="videoDetails__container">
+              <div className="videoDetails__views">
+                <img
+                  className="videoDetails__views--icon"
+                  src={viewsSrc}
+                  alt="View Icon"
+                />
+                <p className="videoDetails__views--count">{views}</p>
+              </div>
+              <div className="videoDetails__likes">
+                <img
+                  className="videoDetails__likes--icon"
+                  src={likeSrc}
+                  alt="Like Icon"
+                />
+                <p className="videoDetails__likes--count">{likes}</p>
+              </div>
+            </div>
+          </div>
+          <p className="videoDetails__description">{description}</p>
+        </div>
+        <h5 className="comments__heading">{comments.length} Comments</h5>
+        <form className="comments__form">
+          <div class="comments__form--left">
+            <input
+              class="comments__form--image"
+              type="image"
+              id="image"
+              alt="Mohan muruge"
+              src={imageSrc}
+            />
+          </div>
+          <div class="comments__form--right">
+            <label class="comments__form--label-tag" htmlFor="name">
+              Join the conversation
+            </label>
+            <textarea
+              class="comments__form--text"
+              name="comment"
+              id="comment"
+              placeholder="Add a new comment"
+            ></textarea>
+
+            <div class="comments__form--sbtwrapper">
+              <button class="comments__form--sbt" type="submit">
+                Comment
+              </button>
+            </div>
+          </div>
+        </form>
+
+        <CommentsList comments={comments} />
+      </div>
+    </section>
   );
 };
 
@@ -33,3 +95,5 @@ VideoDescription.propTypes = {
 };
 
 export default VideoDescription;
+
+// width="750" height="500"

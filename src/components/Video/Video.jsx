@@ -1,8 +1,6 @@
 import React from 'react';
 import './Video.scss';
 
-
-
 function Video(props) {
     console.log('video props', props);
     return (

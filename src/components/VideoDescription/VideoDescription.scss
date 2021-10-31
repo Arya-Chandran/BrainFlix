@@ -21,13 +21,15 @@
     line-height: 32px;
     font-weight: 700;
     margin: 0;
-    padding: 16px 0;
+    padding: 24px 0 16px;
     border-bottom: 1.5px solid $baselight-color;
     text-align: left;
 
     @include tablet {
       font-size: 33px;
       line-height: 44px;
+      padding: 36px 0 0;
+      border: none;
     }
   }
 
@@ -35,6 +37,11 @@
     display: flex;
     padding: 16px 0;
     border-bottom: 1.5px solid $baselight-color;
+
+    @include tablet {
+      padding: 24px 0 8px;
+      justify-content: space-between;
+    }
   }
 
   &__content {
@@ -43,17 +50,23 @@
     padding-right: 64px;
     text-align: left;
 
+    @include tablet {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
     &--channel {
       font-size: 13px;
       line-height: 18px;
       font-weight: 700;
-
       padding-bottom: 16px;
       margin: 0;
 
       @include tablet {
         font-size: 14px;
         line-height: 22px;
+        padding-right: 24px;
+        padding-bottom: 0;
       }
     }
 
@@ -67,6 +80,8 @@
       @include tablet {
         font-size: 14px;
         line-height: 22px;
+        padding: 0;
+        padding-bottom: 0;
       }
     }
   }
@@ -75,15 +90,31 @@
     margin: 0;
     display: flex;
     flex-direction: column;
+
+    @include tablet {
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 0;
+    }
   }
 
   &__views {
     display: flex;
     padding-bottom: 16px;
 
+    @include tablet {
+      padding-right: 24px;
+      padding-bottom: 0;
+    }
+
     &--icon {
       padding-right: 8px;
       height: 15px;
+
+      @include tablet {
+        padding-top: 4px;
+        padding-bottom: 0;
+      }
     }
 
     &--count {
@@ -96,6 +127,8 @@
       @include tablet {
         font-size: 14px;
         line-height: 22px;
+        padding: 0;
+        padding-bottom: 0;
       }
     }
   }
@@ -106,6 +139,11 @@
     &--icon {
       padding-right: 8px;
       height: 15px;
+
+      @include tablet {
+        padding-top: 4px;
+        padding-bottom: 0;
+      }
     }
 
     &--count {
@@ -118,6 +156,8 @@
       @include tablet {
         font-size: 14px;
         line-height: 22px;
+        padding: 0;
+        padding-bottom: 0;
       }
     }
   }
@@ -134,6 +174,7 @@
     @include tablet {
       font-size: 14px;
       line-height: 22px;
+      padding: 24px 0;
     }
   }
 }
@@ -145,14 +186,24 @@
   text-align: left;
   margin: 0;
   padding-bottom: 16px;
+
+  @include tablet {
+    font-size: 14px;
+    line-height: 20px;
+    padding: 0 0 16px 0;
+  }
 }
 
 .comments__form {
   width: 100%;
   display: flex;
-
+  padding-bottom: 16px;
+  border-bottom: 1.5px solid $baselight-color;
   @include tablet {
-    padding: 0 3rem;
+    padding: 0 0 16px 0;
+   
+  justify-content: space-between;
+   
   }
 
   @include desktop {
@@ -163,23 +214,26 @@
   &--left {
     flex: 0 0 20%;
     padding-top: 2rem;
-    border-bottom: 2px solid $baselight-color;
+  //  border-bottom: 2px solid $baselight-color;
 
     @include tablet {
       flex: 0 0 10%;
-      padding-top: 1.25rem;
-      padding-right: 1rem;
+      padding-top:32px;;
+      //padding-right: 1rem;
     }
   }
 
   &--image {
+    background-image: url(../../assets/images/Mohan-muruge.jpg);
+    background-size: cover;
     border-radius: 50%;
     height: 2.25rem;
     width: 2.25rem;
 
     @include tablet {
-      height: 3rem;
-      width: 3rem;
+      height: 40px;
+      width: 40px;
+      padding:0;
     }
   }
 
@@ -187,26 +241,34 @@
     flex: 0 0 80%;
     display: flex;
     flex-direction: column;
+    // justify-content:left;
     align-items: flex-start;
-    border-bottom: 2px solid $baselight-color;
+   // border-bottom: 2px solid $baselight-color;
 
     @include tablet {
       flex: 0 0 90%;
+      //flex: 0 0 80%;
+      width:100%;
+      flex-direction: row;
+      justify-content:space-between;
+
     }
   }
 
   &--label-tag {
-    font-size: 0.719rem;
-    line-height: 1.125rem;
+    font-size: 12px;
+    line-height: 20px;
     font-weight: 700;
     color: $base-color;
     text-transform: uppercase;
     padding: 0.25rem 0;
+    // width:100%;
+    float:left;
 
     @include tablet {
-      font-size: 1rem;
-      line-height: 1.375rem;
-      flex: 0 0 25%;
+      font-size: 14px;
+      line-height: 20px;
+      //flex: 0 0 25%;
     }
   }
 
@@ -214,6 +276,7 @@
     font-size: 0.875rem;
     line-height: 1.125rem;
     width: 100%;
+   
     height: 6.25rem;
     padding: 0.75rem;
     margin: 0.25rem 0;
@@ -221,6 +284,7 @@
     border: 1px solid $baselight-color;
     border-radius: 0.25rem;
     resize: none;
+    background-color: $light-color;
 
     ::placeholder {
       font-family: "AvenirNext LT Pro";
@@ -237,38 +301,51 @@
     @include tablet {
       font-size: 1rem;
       line-height: 1.375rem;
-      flex: 0 0 25%;
+      padding:0;
+      height:40px;
+      width:460px;
+      float:left;
+     
+      
+     // flex: 0 0 25%;
     }
   }
 
   &--sbtwrapper {
-    display: flex;
-    justify-content: flex-end;
+    // display: flex;
+    // justify-content: flex-end;
     width: 100%;
+    padding-top: 16px;
+    @include tablet {
+        padding-top: 32px;
+        width: 30%;
+      }
   }
 
   &--sbt {
-    font-size: 16px;
+    font-size: 12px;
     line-height: 20px;
     font-weight: 700;
     width: 100%;
-    margin: 1rem 0 0;
+    margin: 0;
     border-width: 0;
-    border-radius: 0.25rem;
+    border-radius: 4px;
     padding: 0.2rem 2rem;
-    height: 40px;
+    height: 36px;
     color: $active-color;
+    background: url(../../assets/icons/add_comment.svg) no-repeat scroll 10px 10px;
     background-color: $secondary-color;
-    background-image: url(../../assets/icons/add_comment.svg);
-    background-repeat: no-repeat;
     background-size: 20px;
-    background-position: calc(100% - 190px) center;
-    left: 8px;
     text-transform: uppercase;
     text-align: center;
 
     @include tablet {
-      width: 30%;
+     // width: 90%;
+      padding: 0;
+      margin: 0;
+      font-size: 14px;
+      line-height: 22px;
+      height: 40px;
     }
   }
 }

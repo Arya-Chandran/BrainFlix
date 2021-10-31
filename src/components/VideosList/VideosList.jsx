@@ -3,7 +3,6 @@ import Video from "../Video/Video";
 import './VideosList.scss';
 
 function VideosList(props) {
-//   console.log("VideosList props", props);
   return (
     <ul className="videoList">
       <h4 className="videoList__heading">Next videos </h4>

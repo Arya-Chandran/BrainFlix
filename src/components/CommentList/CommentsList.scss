@@ -3,12 +3,11 @@
 
 .comment__cards {
     margin: 0;
-    padding: .25rem 0 1rem;
+    padding: 0;
     list-style-type: none;
 
     @include tablet {
       justify-content: space-between;
-      padding:0 3rem 2.25rem;
     }
     @include desktop {
       padding-left: 14rem;
@@ -24,7 +23,7 @@
     justify-content: space-between;
 
     @include tablet {
-      padding: 2.25rem 0 1.5rem;
+      padding: 24px 0 ;
     }
 
     @include desktop {

@@ -1,10 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
-import imageSrc from "../../assets/images/Mohan-muruge.jpg";
 import viewsSrc from "../../assets/icons/views.svg";
 import likeSrc from "../../assets/icons/likes.svg";
-import addCommentSrc from "../../assets/icons/add_comment.svg";
 import CommentsList from "../CommentList/CommentsList";
+//import VideosList from "../VideosList/VideosList";
 import "./VideoDescription.scss";
 
 const VideoDescription = ({ activeVideo }) => {
@@ -57,25 +56,20 @@ const VideoDescription = ({ activeVideo }) => {
         <h5 className="comments__heading">{comments.length} Comments</h5>
         <form className="comments__form">
           <div class="comments__form--left">
-            <input
-              class="comments__form--image"
-              type="image"
-              id="image"
-              alt="Mohan muruge"
-              src={imageSrc}
-            />
+            <div class="comments__form--image"></div>
           </div>
           <div class="comments__form--right">
-            <label class="comments__form--label-tag" htmlFor="name">
-              Join the conversation
-            </label>
-            <textarea
-              class="comments__form--text"
-              name="comment"
-              id="comment"
-              placeholder="Add a new comment"
-            ></textarea>
-
+            <div>
+              <label class="comments__form--label-tag" htmlFor="name">
+                Join the conversation
+              </label>
+              <textarea
+                class="comments__form--text"
+                name="comment"
+                id="comment"
+                placeholder="Add a new comment"
+              ></textarea>
+            </div>
             <div class="comments__form--sbtwrapper">
               <button class="comments__form--sbt" type="submit">
                 Comment
@@ -85,6 +79,7 @@ const VideoDescription = ({ activeVideo }) => {
         </form>
 
         <CommentsList comments={comments} />
+        {/* <VideosList videos={video} /> */}
       </div>
     </section>
   );
@@ -96,4 +91,4 @@ VideoDescription.propTypes = {
 
 export default VideoDescription;
 
-// width="750" height="500"
+

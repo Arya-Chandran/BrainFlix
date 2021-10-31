@@ -5,7 +5,6 @@ import './CommentsList.scss'
 
 
 function CommentsList(props) {
-  //   console.log("VideosList props", props);
     return (
       <ul className="comment__cards">
         {props.comments.map((comment) => {
@@ -32,18 +31,3 @@ CommentsList.propTypes = {
 export default CommentsList;
 
 
-
-// const CommentsList = ({ comments }) => {
-//   <h3>Next videos </h3>
-//   return (
-//     <>
-//       {comments.map((comment) => (
-//         <div key={comment.id}>
-//           <p>{comment.name}</p>
-//           <p>{comment.timestamp}</p>
-//           <p>{comment.comment}</p>
-//         </div>
-//       ))}
-//     </>
-//   );
-// };

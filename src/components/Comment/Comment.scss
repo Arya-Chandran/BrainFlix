@@ -7,7 +7,7 @@
   justify-content: space-between;
 
     @include tablet {
-    // padding: 2.25rem 0 1.5rem;
+   
     }
 
     @include desktop {
@@ -84,15 +84,15 @@
   }
 
   &__text {
-  font-size: 0.875rem;
-  line-height: 1.125rem;
+  font-size: 13px;
+  line-height: 18px;
   font-weight: 400;
   word-wrap: break-word;
   text-align: left;
 
     @include tablet {
-    font-size: 1rem;
-    line-height: 1.375rem;
+    font-size: 14px;
+    line-height: 22px;
     }
 
     @include desktop {

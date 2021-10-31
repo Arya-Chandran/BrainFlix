@@ -3,34 +3,25 @@ import PropTypes from "prop-types";
 import viewsSrc from "../../assets/icons/views.svg";
 import likeSrc from "../../assets/icons/likes.svg";
 import CommentsList from "../CommentList/CommentsList";
-//import VideosList from "../VideosList/VideosList";
 import "./VideoDescription.scss";
 
 const VideoDescription = ({ activeVideo }) => {
-  const {
-    image,
-    video,
-    title,
-    channel,
-    timestamp,
-    views,
-    likes,
-    description,
-    comments,
-  } = activeVideo;
+  const { title, channel, timestamp, views, likes, description, comments } =
+    activeVideo;
+
+  const newTimestamp = new Date(activeVideo.timestamp)
+    .toLocaleString()
+    .split(",")[0];
 
   return (
-    <section class="videoProfile">
-      <video className="videoProfile__activeVideo" controls poster={image}>
-        <source src={video + "?api_key=123"} type="video/mp4" />
-      </video>
+    <div className="videoProfile">
       <div className="videoProfile__wrapper">
         <div className="videoDetails">
           <h1 className="videoDetails__title">{title}</h1>
           <div className="videoDetails__info">
             <div className="videoDetails__content">
               <p className="videoDetails__content--channel">By {channel}</p>
-              <p className="videoDetails__content--date">{timestamp}</p>
+              <p className="videoDetails__content--date">{newTimestamp}</p>
             </div>
             <div className="videoDetails__container">
               <div className="videoDetails__views">
@@ -55,23 +46,23 @@ const VideoDescription = ({ activeVideo }) => {
         </div>
         <h5 className="comments__heading">{comments.length} Comments</h5>
         <form className="comments__form">
-          <div class="comments__form--left">
-            <div class="comments__form--image"></div>
+          <div className="comments__form--left">
+            <div className="comments__form--image"></div>
           </div>
-          <div class="comments__form--right">
-            <div>
-              <label class="comments__form--label-tag" htmlFor="name">
+          <div className="comments__form--right">
+            <div className="comments__form--top">
+              <label className="comments__form--label-tag" htmlFor="name">
                 Join the conversation
               </label>
               <textarea
-                class="comments__form--text"
+                className="comments__form--text"
                 name="comment"
                 id="comment"
                 placeholder="Add a new comment"
               ></textarea>
             </div>
-            <div class="comments__form--sbtwrapper">
-              <button class="comments__form--sbt" type="submit">
+            <div className="comments__form--sbtwrapper">
+              <button className="comments__form--sbt" type="submit">
                 Comment
               </button>
             </div>
@@ -79,9 +70,8 @@ const VideoDescription = ({ activeVideo }) => {
         </form>
 
         <CommentsList comments={comments} />
-        {/* <VideosList videos={video} /> */}
       </div>
-    </section>
+    </div>
   );
 };
 
@@ -90,5 +80,3 @@ VideoDescription.propTypes = {
 };
 
 export default VideoDescription;
-
-

@@ -1,0 +1,16 @@
+
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.activeContainer{
+    @include relative-padding;
+    display:flex;
+    flex-direction:column;
+
+    @include desktop {
+     flex-direction: row;
+     max-width: $max-content-width;
+     margin:0 auto;
+    }
+
+}

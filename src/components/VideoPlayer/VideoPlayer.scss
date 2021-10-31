@@ -1,0 +1,17 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.videoWrapper {
+  background-color: $primarydark-color;
+
+  @include tablet {
+    padding: 0 36px;
+  }
+}
+
+.activeVideo {
+  width: 100%;
+  object-fit: cover;
+  padding: 0;
+  max-width: $max-content-width;
+}

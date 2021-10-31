@@ -6,9 +6,11 @@ function VideosList(props) {
   return (
     <ul className="videoList">
       <h4 className="videoList__heading">Next videos </h4>
-      {props.videos.map((video) => {
+      {props.videos
+        .filter((video) => video.id !== props.activeVideo.id)
+        .map((video) => {
         return (
-          <li className="videoList__item" key={video.id}>
+          <li key={video.id}>
             <Video
               id={video.id}
               image={video.image}

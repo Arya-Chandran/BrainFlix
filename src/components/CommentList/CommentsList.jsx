@@ -8,12 +8,15 @@ function CommentsList(props) {
     return (
       <ul className="comment__cards">
         {props.comments.map((comment) => {
+            const newTimestamp= new Date(comment.timestamp)
+            .toLocaleString()
+            .split(',')[0];
           return (
             <li className="comment__card" key={comment.id}>
               <Comment
                 id={comment.id}
                 name={comment.name}
-                timestamp={comment.timestamp}
+                timestamp={newTimestamp}
                 comment={comment.comment}
               />
             </li>

@@ -1,10 +1,7 @@
 import React from "react";
-// import "./App.scss";
 import "./App.css";
-// import Header from "./components/Header/Header";
-// import VideosList from "./components/VideosList/VideosList";
 import videosData from "./data/video-details.json";
-import AppContainer from "./components/AppContainer/AppContainer";
+import AppContainer from "./components/AppContainer";
 
 class App extends React.Component {
   state = {
@@ -28,8 +25,6 @@ class App extends React.Component {
     console.log(activeVideo);
     return (
       <div className="App">
-        {/* <Header />
-        <VideoDescription activeVideo={this.state.activeVideo} /> */}
         <AppContainer
           activeVideo={this.state.activeVideo}
           videos={this.state.videos}

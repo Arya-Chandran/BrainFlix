@@ -1,7 +1,6 @@
 import "./Comment.scss";
 
 function Comment(props) {
-  console.log("comment props", props);
   return (
     <article className="comment">
       <div className="comment__left">

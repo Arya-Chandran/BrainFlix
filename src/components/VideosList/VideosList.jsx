@@ -1,6 +1,6 @@
-import React from 'react';
-import Video from "../Video/Video";
-import './VideosList.scss';
+import React from "react";
+import Video from "../Video";
+import "./VideosList.scss";
 
 function VideosList(props) {
   return (
@@ -9,18 +9,18 @@ function VideosList(props) {
       {props.videos
         .filter((video) => video.id !== props.activeVideo.id)
         .map((video) => {
-        return (
-          <li key={video.id}>
-            <Video
-              id={video.id}
-              image={video.image}
-              title={video.title}
-              channel={video.channel}
-              handleActiveVideo={props.handleActiveVideo}
-            />
-          </li>
-        );
-      })}
+          return (
+            <li key={video.id}>
+              <Video
+                id={video.id}
+                image={video.image}
+                title={video.title}
+                channel={video.channel}
+                handleActiveVideo={props.handleActiveVideo}
+              />
+            </li>
+          );
+        })}
     </ul>
   );
 }

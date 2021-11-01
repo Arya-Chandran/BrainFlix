@@ -3,7 +3,7 @@
 
 .videoProfile {
   @include desktop {
-    width: 80%;
+    width: 90%;
     margin: 0;
   }
 
@@ -16,74 +16,75 @@
     }
   }
 }
+
 .videoDetails {
   display: flex;
   flex-direction: column;
 
   &__title {
-    font-size: 24px;
-    line-height: 32px;
+    font-size: 1.5rem;
+    line-height: 2rem;
     font-weight: 700;
     margin: 0;
-    padding: 24px 0 16px;
+    padding: 1.5rem 0 1rem;
     border-bottom: 1.5px solid $baselight-color;
     text-align: left;
 
     @include tablet {
-      font-size: 33px;
-      line-height: 44px;
-      padding: 36px 0 0;
+      font-size: 2.0625rem;
+      line-height: 2.75rem;
+      padding: 2.25rem 0 0;
       border: none;
     }
   }
 
   &__info {
     display: flex;
-    padding: 16px 0;
+    padding: 1rem 0;
     border-bottom: 1.5px solid $baselight-color;
 
     @include tablet {
-      padding: 24px 0 8px;
+      padding: 1.5rem 0 0.5rem;
       justify-content: space-between;
     }
   }
 
   &__content {
     display: flex;
+    flex: 0 0 50%;
     flex-direction: column;
-    padding-right: 64px;
     text-align: left;
 
     @include tablet {
       flex-direction: row;
-      justify-content: space-between;
+      justify-content: flex-start;
     }
 
     &--channel {
-      font-size: 13px;
-      line-height: 18px;
+      font-size: 0.8125rem;
+      line-height: 1.125rem;
       font-weight: 700;
-      padding-bottom: 16px;
+      padding-bottom: 1rem;
       margin: 0;
 
       @include tablet {
-        font-size: 14px;
-        line-height: 22px;
-        padding-right: 24px;
+        font-size: 0.875rem;
+        line-height: 1.375rem;
+        padding-right: 1.5rem;
         padding-bottom: 0;
       }
     }
 
     &--date {
-      font-size: 13px;
-      line-height: 18px;
+      font-size: 0.8125rem;
+      line-height: 1.125rem;
       font-weight: 400;
       color: $base-color;
       margin: 0;
 
       @include tablet {
-        font-size: 14px;
-        line-height: 22px;
+        font-size: 0.875rem;
+        line-height: 1.375rem;
         padding: 0;
         padding-bottom: 0;
       }
@@ -92,49 +93,50 @@
 
   &__container {
     margin: 0;
+    flex: 0 0 50%;
     display: flex;
     flex-direction: column;
 
     @include tablet {
       flex-direction: row;
-      justify-content: space-between;
+      justify-content: flex-end;
       padding: 0;
     }
 
     @include desktop {
-      padding-right: 24px;
+      padding-right: 1.5rem;
     }
   }
 
   &__views {
     display: flex;
-    padding-bottom: 16px;
+    padding-bottom: 1rem;
 
     @include tablet {
-      padding-right: 24px;
+      padding-right: 1.5rem;
       padding-bottom: 0;
     }
 
     &--icon {
-      padding-right: 8px;
-      height: 15px;
+      padding-right: 0.5rem;
+      height: 0.9375rem;
 
       @include tablet {
-        padding-top: 4px;
+        padding-top: 0.25rem;
         padding-bottom: 0;
       }
     }
 
     &--count {
-      font-size: 13px;
-      line-height: 18px;
+      font-size: 0.8125rem;
+      line-height: 1.125rem;
       font-weight: 400;
       color: $base-color;
       margin: 0;
 
       @include tablet {
-        font-size: 14px;
-        line-height: 22px;
+        font-size: 0.875rem;
+        line-height: 1.375rem;
         padding: 0;
         padding-bottom: 0;
       }
@@ -145,75 +147,78 @@
     display: flex;
 
     &--icon {
-      padding-right: 8px;
-      height: 15px;
+      padding-right: 0.5rem;
+      height: 0.9375rem;
 
       @include tablet {
-        padding-top: 4px;
+        padding-top: 0.25rem;
         padding-bottom: 0;
       }
     }
 
     &--count {
-      font-size: 13px;
-      line-height: 18px;
+      font-size: 0.8125rem;
+      line-height: 1.125rem;
       font-weight: 400;
       color: $base-color;
       margin: 0;
 
       @include tablet {
-        font-size: 14px;
-        line-height: 22px;
+        font-size: 0.875rem;
+        line-height: 1.375rem;
         padding: 0;
         padding-bottom: 0;
+      }
+
+      @include desktop {
+        padding-right: 1.5rem;
       }
     }
   }
 
   &__description {
-    font-size: 13px;
-    line-height: 18px;
+    font-size: 0.8125rem;
+    line-height: 1.125rem;
     font-weight: 400;
     text-align: left;
-    padding: 16px 0;
+    padding: 1rem 0;
     color: $primary-color;
     margin: 0;
 
     @include tablet {
-      font-size: 14px;
-      line-height: 22px;
-      padding: 24px 0;
+      font-size: 0.875rem;
+      line-height: 1.375rem;
+      padding: 1.5rem 0;
     }
 
     @include desktop {
-      padding-right: 24px;
+      padding-right: 1.5rem;
     }
   }
 }
 
 .comments__heading {
-  font-size: 13px;
-  line-height: 18px;
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
   font-weight: 700;
   text-align: left;
   margin: 0;
-  padding-bottom: 16px;
+  padding-bottom: 1rem;
 
   @include tablet {
-    font-size: 14px;
-    line-height: 20px;
-    padding: 0 0 18px 0;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    padding: 0 0 1.125rem 0;
   }
 }
 
 .comments__form {
   width: 100%;
   display: flex;
-  padding-bottom: 16px;
-  border-bottom: 1.5px solid $baselight-color;
+  padding-bottom: 1rem;
 
   @include tablet {
-    padding: 0 0 16px 0;
+    padding: 0 0 1rem 0;
     height: 100%;
     justify-content: space-between;
   }
@@ -228,7 +233,7 @@
 
     @include tablet {
       flex: 0 0 10%;
-      padding-top: 29px;
+      padding-top: 1.8125rem;
     }
   }
 
@@ -240,8 +245,8 @@
     width: 2.25rem;
 
     @include tablet {
-      height: 40px;
-      width: 40px;
+      height: 2.5rem;
+      width: 2.5rem;
       padding: 0;
     }
   }
@@ -255,7 +260,6 @@
 
     @include tablet {
       flex: 0 0 90%;
-
       width: 100%;
       flex-direction: row;
       justify-content: space-between;
@@ -269,98 +273,98 @@
     align-items: flex-start;
 
     @include tablet {
+      padding-right: 1rem;
     }
   }
 
   &--label-tag {
-    font-size: 12px;
-    line-height: 20px;
+    font-size: 0.75rem;
+    line-height: 1.25rem;
     font-weight: 700;
     color: $base-color;
     text-transform: uppercase;
     padding: 0.25rem 0;
 
     @include tablet {
-      font-size: 14px;
-      line-height: 20px;
+      font-size: 0.875rem;
+      line-height: 1.25rem;
     }
   }
 
   &--text {
-    font-size: 13px;
-    line-height: 18px;
+    font-size: 0.8125rem;
+    line-height: 1.125rem;
     width: 100%;
-
     height: 6.25rem;
-    padding: 12px;
+    padding: 0.75rem;
     margin: 0.25rem 0;
     box-sizing: border-box;
     border: 1px solid $baselight-color;
     border-radius: 0.25rem;
     resize: none;
     background-color: $light-color;
-
-    ::placeholder {
-      font-size: 13px;
-      line-height: 18px;
-      color: $primary-color;
-
-      @include tablet {
-        font-size: 1rem;
-        line-height: 1.375rem;
-
-        height: 100%;
-      }
-    }
+    color: $primary-color;
 
     @include tablet {
-      font-size: 14px;
-      line-height: 16px;
-      padding: 10px 8px 0;
+      font-size: 0.875rem;
+      line-height: 1rem;
+      padding: 0.625rem 0.5rem 0;
       margin: 0;
-      height: 40px;
-      width: 460px;
+      height: 2.5rem;
+      width: 100%;
     }
   }
 
+  textarea::placeholder {
+    font-size: 0.8125rem;
+    line-height: 1.125rem;
+    color: $primary-color;
+  
+    @include tablet {
+      font-size: 0.875rem;
+      line-height: 1rem;
+      height: 100%;
+    }
+  }
+
+
   &--sbtwrapper {
     width: 100%;
-    padding-top: 16px;
-    @include tablet {
-      padding-top: 29px;
+    padding-top: 1rem;
 
+    @include tablet {
+      padding-top: 1.8125rem;
       width: 30%;
     }
 
     @include desktop {
-      padding-right: 24px;
+      padding-right: 1.5rem;
     }
   }
 
   &--sbt {
-    font-size: 12px;
-    line-height: 20px;
+    font-size: 0.75rem;
+    line-height: 1.25rem;
     font-weight: 700;
     width: 100%;
     margin: 0;
     border-width: 0;
-    border-radius: 4px;
+    border-radius: 0.25rem;
     padding: 0.2rem 2rem;
-    height: 36px;
+    height: 2.25rem;
     color: $active-color;
-    background: url(../../assets/icons/add_comment.svg) no-repeat scroll 10px
-      10px;
+    background: url(../../assets/icons/add_comment.svg) no-repeat scroll 10px 10px;
     background-color: $secondary-color;
-    background-size: 20px;
+    background-size: 1.25rem;
     text-transform: uppercase;
     text-align: center;
 
     @include tablet {
       padding: 0;
       margin: 0;
-      font-size: 14px;
-      line-height: 22px;
-      height: 40px;
+      font-size: 0.875rem;
+      line-height: 1.375rem;
+      height: 2.5rem;
     }
   }
 }

@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Header from "../Header/Header";
-import VideosList from "../VideosList/VideosList";
-import VideoDescription from "../VideoDescription/VideoDescription";
-import VideoPlayer from "../VideoPlayer/VideoPlayer";
+import Header from "../Header";
+import VideosList from "../VideosList";
+import VideoDescription from "../VideoDescription";
+import VideoPlayer from "../VideoPlayer";
 import "./AppContainer.scss";
 
 const AppContainer = (props) => {

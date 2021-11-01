@@ -6,98 +6,90 @@
   display: flex;
   justify-content: space-between;
 
-    @include tablet {
-   
-    }
-
-    @include desktop {
-    justify-content: space-between;
-    }
-
-
   &__left {
-  flex: 0 0 20%;
+    flex: 0 0 20%;
 
     @include tablet {
-    flex: 0 0 10%;
+      flex: 0 0 10%;
     }
   }
 
   &__image {
-  border-radius: 50%;
-  background-color: $baselight-color;
-  height: 2.25rem;
-  width: 2.25rem;
+    border-radius: 50%;
+    background-color: $baselight-color;
+    height: 2.25rem;
+    width: 2.25rem;
+    float: left;
 
     @include tablet {
-    height: 40px;
-    width: 40px;
-    float: left;
+      height: 2.5rem;
+      width: 2.5rem;
     }
   }
 
   &__right {
-  flex: 0 0 80%;
+    flex: 0 0 80%;
 
     @include tablet {
-    flex: 0 0 90%;
+      flex: 0 0 90%;
     }
   }
 
   &__top {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.5rem;
 
     @include tablet {
-    margin: 0;
+      margin: 0;
     }
   }
 
   &__name {
-  color: $primary-color;
-  font-size: 0.875rem;
-  line-height: 1.125rem;
-  font-weight: 700;
-  padding: 0;
-  margin: 0;
-  word-wrap: break-word;
+    color: $primary-color;
+    font-size: 0.8125rem;
+    line-height: 1.125rem;
+    font-weight: 700;
+    padding: 0;
+    margin: 0;
+    word-wrap: break-word;
 
     @include tablet {
-    font-size: 1rem;
-    line-height: 1.375rem;
+      font-size: 0.875rem;
+      line-height: 1.375rem;
     }
   }
 
   &__date {
-  font-size: 0.875rem;
-  line-height: 1.125rem;
-  font-weight: 400;
-  color: $base-color;
-  margin: 0;
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    font-weight: 400;
+    color: $base-color;
+    margin: 0;
 
     @include tablet {
-    font-size: 1rem;
-    line-height: 1.375rem;
+      font-size: 0.875rem;
+      line-height: 1.375rem;
     }
   }
 
   &__text {
-  font-size: 13px;
-  line-height: 18px;
-  font-weight: 400;
-  word-wrap: break-word;
-  text-align: left;
+    font-size: 0.8125rem;
+    line-height: 1.125rem;
+    font-weight: 400;
+    word-wrap: break-word;
+    text-align: left;
+    margin: 0;
+    padding-top: 0.5rem;
 
     @include tablet {
-    font-size: 14px;
-    line-height: 22px;
+      font-size: 0.875rem;
+      line-height: 1.375rem;
     }
 
     @include desktop {
-    max-width: $max-content-width;
-   }
- }
+      max-width: $max-content-width;
+    }
+  }
 }
-

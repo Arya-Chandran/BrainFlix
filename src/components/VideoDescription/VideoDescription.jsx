@@ -2,12 +2,11 @@ import React from "react";
 import PropTypes from "prop-types";
 import viewsSrc from "../../assets/icons/views.svg";
 import likeSrc from "../../assets/icons/likes.svg";
-import CommentsList from "../CommentList/CommentsList";
+import CommentsList from "../CommentList";
 import "./VideoDescription.scss";
 
 const VideoDescription = ({ activeVideo }) => {
-  const { title, channel, timestamp, views, likes, description, comments } =
-    activeVideo;
+  const { title, channel, timestamp, views, likes, description, comments } = activeVideo;
 
   const newTimestamp = new Date(activeVideo.timestamp)
     .toLocaleString()
@@ -76,7 +75,7 @@ const VideoDescription = ({ activeVideo }) => {
 };
 
 VideoDescription.propTypes = {
-  activeVideo: PropTypes.object.isRequired,
+  activeVideo: PropTypes.object.isRequired
 };
 
 export default VideoDescription;

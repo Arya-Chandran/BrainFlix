@@ -11,7 +11,7 @@ const VideoDescription = ({ activeVideo }) => {
   const newTimestamp = new Date(activeVideo.timestamp)
     .toLocaleString()
     .split(",")[0];
-
+  console.log(activeVideo);
   return (
     <div className="videoProfile">
       <div className="videoProfile__wrapper">

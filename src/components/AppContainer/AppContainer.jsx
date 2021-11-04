@@ -6,6 +6,7 @@ import VideoPlayer from "../VideoPlayer";
 import "./AppContainer.scss";
 
 const AppContainer = (props) => {
+  console.log("props:", props)
   return (
     <div>
       <VideoPlayer activeVideo={props.activeVideo} />

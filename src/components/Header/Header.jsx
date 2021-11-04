@@ -1,11 +1,12 @@
 import logoSrc from "../../assets/logo/BrainFlix-logo.svg";
+import { Link } from 'react-router-dom';
 import "./Header.scss";
 
 function Header() {
   return (
     <header className="header">
       <div className="header__wrapper">
-        <img className="header__logo" src={logoSrc} alt="BrainFlix logo" />
+       <img className="header__logo" src={logoSrc} alt="BrainFlix logo" />
         <form className="header__form">
           <input
             className="header__form--search"

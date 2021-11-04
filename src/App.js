@@ -1,35 +1,22 @@
 import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
-import videosData from "./data/video-details.json";
-import AppContainer from "./components/AppContainer";
+import HomePlayerPage from './pages/HomePlayerPage';
+import VideoUploadPage from './pages/VideoUploadPage'
+import Header from './components/Header';
 
 class App extends React.Component {
-  state = {
-    videos: videosData,
-    activeVideo: videosData[0],
-  };
-
-  handleActiveVideo = (id) => {
-    console.log("handleActiveVideo", id);
-    const selectedVideo = this.state.videos.find((video) => {
-      return video.id === id;
-    });
-    console.log(selectedVideo);
-    this.setState({
-      activeVideo: selectedVideo,
-    });
-  };
 
   render() {
-    const { activeVideo } = this.state;
-    console.log(activeVideo);
     return (
       <div className="App">
-        <AppContainer
-          activeVideo={this.state.activeVideo}
-          videos={this.state.videos}
-          handleActiveVideo={this.handleActiveVideo}
-        />
+        <Header />
+        <Router>
+          <Switch>
+            <Route path="/" exact component={HomePlayerPage} />
+            <Route path="/uplaod" component={VideoUploadPage} /> 
+          </Switch>
+        </Router>
       </div>
     );
   }

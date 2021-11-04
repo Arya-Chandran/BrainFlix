@@ -1,0 +1,240 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.upload {
+  border-top: 1.5px solid $baselight-color;
+
+  &__wrapper {
+    @include relative-padding;
+    text-align: left;
+
+    @include desktop {
+      margin: 0 auto;
+      max-width: $max-content-width;
+    }
+  }
+
+  &__title {
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 700;
+    padding-top: 24px;
+    margin: 0;
+
+    @include tablet {
+      font-size: 33px;
+      line-height: 44px;
+    }
+
+    @include desktop {
+      margin: 0 auto;
+      max-width: $max-content-width;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+
+    @include tablet {
+      flex-wrap: nowrap;
+    }
+
+    @include desktop {
+      flex-direction: row;
+      justify-content: space-between;
+      border-top: 1.5px solid $baselight-color;
+      border-bottom: 1.5px solid $baselight-color;
+    }
+
+    &--thumbnail {
+      text-transform: uppercase;
+      color: $base-color;
+      text-align: left;
+      margin: 0;
+      padding: 16px 0;
+      font-size: 0.75rem;
+      line-height: 1.25rem;
+      font-weight: 700;
+
+      @include tablet {
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+      }
+
+      @include desktop {
+        padding: 36px 0 0;
+      }
+    }
+
+    &--image {
+      width: 100%;
+      max-width: 288px;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 4px;
+      background-size: cover;
+      background-color: $baselight-color;
+    }
+
+    &--top-container {
+      width: 100%;
+      
+      @include desktop {
+        padding: 36px 0 36px 36px;
+      }
+    }
+
+    &--label-tag {
+      font-size: 0.75rem;
+      line-height: 1.25rem;
+      font-weight: 700;
+      color: $base-color;
+      text-transform: uppercase;
+      margin: 16px 0;
+
+      @include tablet {
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+      }
+    }
+
+    &--title {
+      font-size: 0.8125rem;
+      line-height: 1.125rem;
+      width: 100%;
+      padding: 0.75rem;
+      box-sizing: border-box;
+      border: 1px solid $baselight-color;
+      border-radius: 0.25rem;
+      resize: none;
+      background-color: $light-color;
+      color: $primary-color;
+
+      @include tablet {
+        font-size: 0.875rem;
+        line-height: 1rem;
+        margin: 0;
+        width: 100%;
+      }
+    }
+
+    input::placeholder {
+      font-family: "AvenirNext LT Pro";
+      font-size: 0.8125rem;
+      line-height: 1.125rem;
+      color: $primary-color;
+
+      @include tablet {
+        font-size: 0.875rem;
+        line-height: 1rem;
+        height: 100%;
+      }
+    }
+
+    &--description {
+      font-size: 0.8125rem;
+      line-height: 1.125rem;
+      width: 100%;
+      height: 6.25rem;
+      padding: 0.75rem;
+      box-sizing: border-box;
+      border: 1px solid $baselight-color;
+      border-radius: 0.25rem;
+      resize: none;
+      background-color: $light-color;
+      color: $primary-color;
+
+      @include tablet {
+        font-size: 0.875rem;
+        line-height: 1rem;
+        padding: 0.625rem 0.5rem 0;
+        margin: 0;
+        width: 100%;
+      }
+    }
+
+    textarea::placeholder {
+      font-family: "AvenirNext LT Pro";
+      font-size: 12px;
+      line-height: 20px;
+      font-weight: 400;
+      color: $primary-color;
+
+      @include tablet {
+        font-size: 12px;
+        line-height: 20px;
+      }
+    }
+  }
+
+  &__bottom-container {
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+      flex-direction: row-reverse;
+      justify-content: flex-start;
+    }
+  }
+
+  &__publishWrapper {
+    width: 100%;
+    padding-top: 1rem;
+
+    @include tablet {
+      padding-top: 1.8125rem;
+      width: 20%;
+    }
+
+    @include desktop {
+      width: 10%;
+    }
+  }
+
+  &__publish {
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+    font-weight: 700;
+    width: 100%;
+    margin: 0;
+    border-width: 0;
+    border-radius: 0.25rem;
+    padding: 0.2rem 2rem;
+    height: 2.25rem;
+    color: $active-color;
+    background: url(../../assets/icons/publish.svg) no-repeat scroll 10px 10px;
+    background-color: $secondary-color;
+    background-size: 1.25rem;
+    text-transform: uppercase;
+    text-align: center;
+
+    @include tablet {
+      padding: 0;
+      margin: 0;
+      font-size: 0.875rem;
+      line-height: 1.375rem;
+      height: 2.5rem;
+    }
+  }
+
+  &__cancel {
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    color: $secondary-color;
+    padding-top: 24px;
+
+    @include tablet {
+      padding: 36px 140px;
+      margin: 0;
+      font-size: 0.875rem;
+      line-height: 1.375rem;
+    }
+  }
+}

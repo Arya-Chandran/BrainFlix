@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Header from "../Header";
 import VideosList from "../VideosList";
 import VideoDescription from "../VideoDescription";
 import VideoPlayer from "../VideoPlayer";
@@ -9,7 +8,6 @@ import "./AppContainer.scss";
 const AppContainer = (props) => {
   return (
     <div>
-      <Header />
       <VideoPlayer activeVideo={props.activeVideo} />
       <div className="activeContainer">
           <VideoDescription activeVideo={props.activeVideo} />

@@ -10,11 +10,15 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Header />
+        
         <Router>
+        <Header />
           <Switch>
             <Route path="/" exact component={HomePlayerPage} />
-            <Route path="/uplaod" component={VideoUploadPage} /> 
+            {/* <Route path="/videos" exact component={HomePlayerPage} /> */}
+            <Route path="/upload" component={VideoUploadPage} /> 
+            <Route path="/videos/:id" exact component={HomePlayerPage} />
+            
           </Switch>
         </Router>
       </div>

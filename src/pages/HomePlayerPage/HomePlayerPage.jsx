@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import videosData from "../../data/video-details.json";
 import AppContainer from "../../components/AppContainer";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 class HomePlayerPage extends Component {
 
@@ -28,6 +29,7 @@ class HomePlayerPage extends Component {
       });
   }
 
+
   getVideoById(id) {
     axios
       .get(
@@ -44,11 +46,17 @@ class HomePlayerPage extends Component {
         console.log(error);
       });
   }
+  
+  componentDidUpdate(prevProps, prevState) {
+    const { id } = this.props.match.params;
+    console.log(prevState.activeVideo)
+    if (id) {
+      if (prevState.activeVideo && prevState.activeVideo.id !== id) {
+        this.getVideoById(id);
+      }
+    }
+  }
 
-  handleActiveVideo = (id) => {
-    console.log("handleActiveVideo", id);
-    this.getVideoById(id);
-  };
 
   render() {
     const { activeVideo, videos } = this.state;
@@ -57,11 +65,12 @@ class HomePlayerPage extends Component {
     return (
       <div>
         {activeVideo && videos && (
-          <AppContainer
+           <Link to={"/videos/" + activeVideo.id}>
+           <AppContainer
             activeVideo={this.state.activeVideo}
             videos={this.state.videos}
-            handleActiveVideo={this.handleActiveVideo}
           />
+          </Link>
         )}
       </div>
     );

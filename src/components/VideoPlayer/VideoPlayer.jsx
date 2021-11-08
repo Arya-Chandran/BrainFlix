@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import "./VideoPlayer.scss";
 
 const VideoPlayer = ({ activeVideo }) => {
@@ -14,8 +13,5 @@ const VideoPlayer = ({ activeVideo }) => {
   );
 };
 
-VideoPlayer.propTypes = {
-  activeVideo: PropTypes.object.isRequired,
-};
 
 export default VideoPlayer;

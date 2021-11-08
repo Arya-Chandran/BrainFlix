@@ -55,12 +55,12 @@
       width: 82%;
       height: 2.25rem;
       padding: 0.75rem;
+      padding-left: 2rem;
       box-sizing: border-box;
       border: 1px solid $baselight-color;
-      border-radius: 0.25rem;
       resize: none;
       border-radius: 0.25rem;
-      background-color: $light-color;
+      background-color: $light-color !important;
       background: url(../../assets/icons/search.svg) no-repeat scroll 8px 8px;
       order: 1;
 
@@ -70,20 +70,21 @@
         height: 2.5rem;
         width: 50%;
       }
-    }
-
-    ::placeholder {
-      font-size: 0.8125rem;
-      line-height: 1.125rem;
-      font-weight: 400;
-      padding-left: 1.5rem;
-      color: $primary-color;
-
-      @include tablet {
-        font-size: 0.875rem;
-        line-height: 1.375rem;
+      &::placeholder {
+        font-size: 0.8125rem;
+        line-height: 1.125rem;
+        font-weight: 400;
+       // padding-left: 1.5rem;
+        color: $primary-color;
+  
+        @include tablet {
+          font-size: 0.875rem;
+          line-height: 1.375rem;
+        }
       }
     }
+
+  
 
     &--image {
       background-image: url(../../assets/images/Mohan-muruge.jpg);

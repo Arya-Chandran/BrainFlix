@@ -1,17 +1,15 @@
 import React from "react";
-import PropTypes from "prop-types";
 import viewsSrc from "../../assets/icons/views.svg";
 import likeSrc from "../../assets/icons/likes.svg";
 import CommentsList from "../CommentList";
 import "./VideoDescription.scss";
+import {computeTimestamp} from '../Utils/Utils';
 
 const VideoDescription = ({ activeVideo }) => {
   const { title, channel, timestamp, views, likes, description, comments } = activeVideo;
 
-  const newTimestamp = new Date(activeVideo.timestamp)
-    .toLocaleString()
-    .split(",")[0];
-  console.log(activeVideo);
+  const newTimestamp = computeTimestamp(timestamp)
+  
   return (
     <div className="videoProfile">
       <div className="videoProfile__wrapper">
@@ -74,8 +72,5 @@ const VideoDescription = ({ activeVideo }) => {
   );
 };
 
-VideoDescription.propTypes = {
-  activeVideo: PropTypes.object.isRequired
-};
 
 export default VideoDescription;

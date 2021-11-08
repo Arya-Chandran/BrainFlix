@@ -5,6 +5,7 @@ import HomePlayerPage from './pages/HomePlayerPage';
 import VideoUploadPage from './pages/VideoUploadPage'
 import Header from './components/Header';
 
+
 class App extends React.Component {
 
   render() {
@@ -15,7 +16,7 @@ class App extends React.Component {
         <Header />
           <Switch>
             <Route path="/" exact component={HomePlayerPage} />
-            {/* <Route path="/videos" exact component={HomePlayerPage} /> */}
+            <Route path="/videos" exact component={HomePlayerPage} />
             <Route path="/upload" component={VideoUploadPage} /> 
             <Route path="/videos/:id" exact component={HomePlayerPage} />
             

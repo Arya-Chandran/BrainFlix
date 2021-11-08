@@ -1,5 +1,4 @@
 import logoSrc from "../../assets/logo/BrainFlix-logo.svg";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "./Header.scss";
 

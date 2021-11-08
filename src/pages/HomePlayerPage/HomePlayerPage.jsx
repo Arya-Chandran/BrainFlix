@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import videosData from "../../data/video-details.json";
 import AppContainer from "../../components/AppContainer";
 import axios from "axios";
 import { Link } from "react-router-dom";
@@ -37,7 +36,6 @@ class HomePlayerPage extends Component {
       )
       .then((response) => {
         const selectedVideo = response.data;
-        console.log(selectedVideo);
         this.setState({
           activeVideo: selectedVideo,
         });
@@ -46,13 +44,13 @@ class HomePlayerPage extends Component {
         console.log(error);
       });
   }
+ 
   
   componentDidUpdate(prevProps, prevState) {
     const { id } = this.props.match.params;
-    console.log(prevState.activeVideo)
     if (id) {
       if (prevState.activeVideo && prevState.activeVideo.id !== id) {
-        this.getVideoById(id);
+        this.getVideoById(id); 
       }
     }
   }
@@ -60,8 +58,6 @@ class HomePlayerPage extends Component {
 
   render() {
     const { activeVideo, videos } = this.state;
-    console.log("ActiveVideo:", activeVideo);
-    console.log("ActiveVideo:", videos);
     return (
       <div>
         {activeVideo && videos && (
@@ -78,3 +74,4 @@ class HomePlayerPage extends Component {
 }
 
 export default HomePlayerPage;
+

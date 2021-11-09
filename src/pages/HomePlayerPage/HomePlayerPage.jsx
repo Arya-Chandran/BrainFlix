@@ -4,9 +4,8 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 
 class HomePlayerPage extends Component {
-
   state = {
-    videos:[],
+    videos: [],
     activeVideo: null,
   };
 
@@ -16,7 +15,9 @@ class HomePlayerPage extends Component {
 
   getVideos() {
     axios
-      .get("https://project-2-api.herokuapp.com/videos?api_key=c6576d2e-b5a7-4a7d-b3b4-435dac3e2e4d")
+      .get(
+        "https://project-2-api.herokuapp.com/videos?api_key=c6576d2e-b5a7-4a7d-b3b4-435dac3e2e4d"
+      )
       .then((response) => {
         this.setState({
           videos: response.data,
@@ -27,7 +28,6 @@ class HomePlayerPage extends Component {
         console.log(error);
       });
   }
-
 
   getVideoById(id) {
     axios
@@ -44,28 +44,26 @@ class HomePlayerPage extends Component {
         console.log(error);
       });
   }
- 
-  
+
   componentDidUpdate(prevProps, prevState) {
     const { id } = this.props.match.params;
     if (id) {
       if (prevState.activeVideo && prevState.activeVideo.id !== id) {
-        this.getVideoById(id); 
+        this.getVideoById(id);
       }
     }
   }
-
 
   render() {
     const { activeVideo, videos } = this.state;
     return (
       <div>
         {activeVideo && videos && (
-           <Link to={"/videos/" + activeVideo.id}>
-           <AppContainer
-            activeVideo={this.state.activeVideo}
-            videos={this.state.videos}
-          />
+          <Link to={"/videos/" + activeVideo.id}>
+            <AppContainer
+              activeVideo={this.state.activeVideo}
+              videos={this.state.videos}
+            />
           </Link>
         )}
       </div>
@@ -74,4 +72,3 @@ class HomePlayerPage extends Component {
 }
 
 export default HomePlayerPage;
-

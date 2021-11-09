@@ -1,13 +1,9 @@
-
 @use "./styles/partials/resets" as *;
 @use "./styles/partials/mixins" as *;
 @use "./styles/partials/variables" as *;
 @use "./styles/partials/typography" as *;
 
-@import "./styles/partials/typography";
-
 body {
-    font-family: "AvenirNext LT Pro";
-    color: $primary-color;
-  }
-  
+  font-family: "AvenirNext LT Pro";
+  color: $primary-color;
+}

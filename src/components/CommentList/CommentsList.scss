@@ -1,5 +1,6 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typography" as *;
 
 .comment__cards {
   margin: 0;
@@ -9,6 +10,7 @@
   @include tablet {
     justify-content: space-between;
   }
+  
   @include desktop {
     flex: 0 0 40%;
   }

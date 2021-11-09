@@ -6,7 +6,7 @@ function Header() {
   return (
     <header className="header">
       <div className="header__wrapper">
-         <Link to="/">
+        <Link to="/">
           <img className="header__logo" src={logoSrc} alt="BrainFlix logo" />
         </Link>
 

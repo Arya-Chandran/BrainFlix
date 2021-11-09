@@ -1,19 +1,27 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
-//@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/typography" as *;
 
+.videoWrapper {
+  background-color: $primarydark-color;
 
-.videoWrapper{
-    position: relative;
-    padding-bottom: 56.25%;
-    height: 0;
-    }
-    
-    .activeVideo {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: $primarydark-color;
-    }
+  @include tablet {
+    padding: 0 1.5rem;
+  }
+}
+
+.activeVideo {
+  width: 100%;
+  height: 12.5rem;
+  object-fit: cover;
+
+  @include tablet {
+    height: 31.25rem;
+  }
+
+  @include desktop {
+    height: 43.75rem;
+    margin: 0 auto;
+    max-width: $max-content-width;
+  }
+}

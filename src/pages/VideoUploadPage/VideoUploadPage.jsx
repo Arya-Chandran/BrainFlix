@@ -6,7 +6,7 @@ import videoThumbnail from "../../assets/icons/Upload-video-preview.jpg";
 class VideoUploadPage extends Component {
   state = {
     title: "",
-    description: ""
+    description: "",
   };
 
   handleChange = (event) => {
@@ -23,11 +23,10 @@ class VideoUploadPage extends Component {
   };
 
   handleSubmit = (event) => {
-    console.log(this.props)
     event.preventDefault();
     if (this.isFormValid()) {
       alert("Upload video successfully");
-      this.props.history.push('/', {})
+      this.props.history.push("/", {});
     } else {
       alert("Failed to upload");
     }
@@ -59,7 +58,6 @@ class VideoUploadPage extends Component {
                     name="title"
                     value={this.state.title}
                     onChange={this.handleChange}
-                   
                     placeholder="Add a title to your video"
                   />
                 </div>
@@ -72,7 +70,6 @@ class VideoUploadPage extends Component {
                   id="description"
                   value={this.state.description}
                   onChange={this.handleChange}
-                 
                   placeholder="Add a description to your video"
                 ></textarea>
               </div>

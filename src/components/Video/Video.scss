@@ -1,11 +1,10 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typography" as *;
 
-
-
-a{
+a {
   color: inherit;
-  text-decoration: none; 
+  text-decoration: none;
 }
 
 .video {

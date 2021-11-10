@@ -16,9 +16,10 @@ class HomePlayerPage extends Component {
   getVideos() {
     axios
       .get(
-        "https://project-2-api.herokuapp.com/videos?api_key=c6576d2e-b5a7-4a7d-b3b4-435dac3e2e4d"
+        "http://localhost:8080/videos"
       )
       .then((response) => {
+        console.log(response);
         this.setState({
           videos: response.data,
         });
@@ -31,9 +32,10 @@ class HomePlayerPage extends Component {
 
   getVideoById(id) {
     axios
-      .get(
-        `https://project-2-api.herokuapp.com/videos/${id}?api_key=c6576d2e-b5a7-4a7d-b3b4-435dac3e2e4d`
-      )
+    .get(
+      `http://localhost:8080/videos/${id}`
+    )
+    
       .then((response) => {
         const selectedVideo = response.data;
         this.setState({

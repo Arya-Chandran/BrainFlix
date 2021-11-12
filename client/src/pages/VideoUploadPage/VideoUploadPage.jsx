@@ -1,12 +1,14 @@
 import { Component } from "react";
 import "./VideoUploadPage.scss";
 import { Link } from "react-router-dom";
+import axios from "axios";
 import videoThumbnail from "../../assets/icons/Upload-video-preview.jpg";
 
 class VideoUploadPage extends Component {
   state = {
     title: "",
     description: "",
+    image: ""
   };
 
   handleChange = (event) => {
@@ -22,15 +24,29 @@ class VideoUploadPage extends Component {
     return true;
   };
 
-  handleSubmit = (event) => {
-    event.preventDefault();
-    if (this.isFormValid()) {
-      alert("Upload video successfully");
-      this.props.history.push("/", {});
-    } else {
-      alert("Failed to upload");
-    }
+  handleSubmit = (e) => {
+    e.preventDefault();
+    axios
+        .post('http://localhost:8080/videos', {
+          title: this.state.title,
+          description: this.state.description,
+          image: this.state.image
+        })
+        .then(response => {
+          this.props.history.push("/", {});
+        })
   };
+
+  // handleSubmit = (event) => {
+  //   event.preventDefault();
+  //   if (this.isFormValid()) {
+  //     alert("Upload video successfully");
+  //     this.props.history.push("/", {});
+  //   } else {
+  //     alert("Failed to upload");
+  //   }
+  // };
+
 
   render() {
     return (

@@ -37,6 +37,7 @@ class HomePlayerPage extends Component {
     )
     
       .then((response) => {
+        console.log(response.data);
         const selectedVideo = response.data;
         this.setState({
           activeVideo: selectedVideo,
@@ -48,7 +49,9 @@ class HomePlayerPage extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
+    console.log(this.props.match);
     const { id } = this.props.match.params;
+   
     if (id) {
       if (prevState.activeVideo && prevState.activeVideo.id !== id) {
         this.getVideoById(id);

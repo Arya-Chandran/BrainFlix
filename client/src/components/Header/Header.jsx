@@ -20,9 +20,9 @@ function Header() {
           />
           <div className="header__form--image"></div>
 
-          <div class="header__form--sbtwrapper">
+          <div className="header__form--sbtwrapper">
             <Link to="/upload">
-              <button class="header__form--sbt" type="submit">
+              <button className="header__form--sbt" type="submit">
                 Upload
               </button>
             </Link>

@@ -37,15 +37,6 @@ class VideoUploadPage extends Component {
         })
   };
 
-  // handleSubmit = (event) => {
-  //   event.preventDefault();
-  //   if (this.isFormValid()) {
-  //     alert("Upload video successfully");
-  //     this.props.history.push("/", {});
-  //   } else {
-  //     alert("Failed to upload");
-  //   }
-  // };
 
 
   render() {

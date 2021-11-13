@@ -9,7 +9,7 @@ function Video(props) {
       <div className="video__leftSection">
         <img
           className="video__leftSection--image"
-          src={props.image}
+          src={"http://localhost:8080" + props.image}
           alt={props.title}
         />
       </div>

@@ -4,7 +4,7 @@ function Comment(props) {
   return (
     <article className="comment">
       <div className="comment__left">
-        <img className="comment__image" />
+        <img className="comment__image" alt=""/>
       </div>
       <div className="comment__right">
         <div className="comment__top">

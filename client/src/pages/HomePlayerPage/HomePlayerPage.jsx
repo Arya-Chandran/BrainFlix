@@ -15,11 +15,8 @@ class HomePlayerPage extends Component {
 
   getVideos() {
     axios
-      .get(
-        "http://localhost:8080/videos"
-      )
+      .get("http://localhost:8080/videos")
       .then((response) => {
-        console.log(response);
         this.setState({
           videos: response.data,
         });
@@ -32,12 +29,8 @@ class HomePlayerPage extends Component {
 
   getVideoById(id) {
     axios
-    .get(
-      `http://localhost:8080/videos/${id}`
-    )
-    
+      .get(`http://localhost:8080/videos/${id}`)
       .then((response) => {
-        console.log(response.data);
         const selectedVideo = response.data;
         this.setState({
           activeVideo: selectedVideo,
@@ -49,9 +42,7 @@ class HomePlayerPage extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    console.log(this.props.match);
     const { id } = this.props.match.params;
-   
     if (id) {
       if (prevState.activeVideo && prevState.activeVideo.id !== id) {
         this.getVideoById(id);

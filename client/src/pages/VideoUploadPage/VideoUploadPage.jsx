@@ -8,7 +8,7 @@ class VideoUploadPage extends Component {
   state = {
     title: "",
     description: "",
-    image: ""
+    image: "",
   };
 
   handleChange = (event) => {
@@ -26,18 +26,20 @@ class VideoUploadPage extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    axios
-        .post('http://localhost:8080/videos', {
+    if (this.isFormValid()) {
+      axios
+        .post("http://localhost:8080/videos", {
           title: this.state.title,
           description: this.state.description,
-          image: this.state.image
+          image: this.state.image,
         })
-        .then(response => {
+        .then((response) => {
           this.props.history.push("/", {});
-        })
+        });
+    } else {
+      alert("Failed to upload");
+    }
   };
-
-
 
   render() {
     return (

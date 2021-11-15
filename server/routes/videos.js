@@ -39,22 +39,20 @@ router.post("/", (req, res) => {
     id: uuidv4(),
     title,
     description,
-    image:"/images/image9.jpg",
-    channel:"channel",
-    views:0,
-    likes:0,
-    duration:0,
-    video:0,
-    timestamp:0,
-    comments:[]
+    image: "/images/image9.jpg",
+    channel: "channel",
+    views: 0,
+    likes: 0,
+    duration: 0,
+    video: 0,
+    timestamp: 0,
+    comments: [],
   };
   videoData.push(newVideo);
   fs.writeFile(`./data/videos.json`, JSON.stringify(videoData), (error) => {
     if (error) {
-      console.log(error);
       return;
     }
-    console.log("File written successfully");
   });
   res.json({});
 });

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 function Video(props) {
   return (
     <Link to={"/videos/" + props.id}>
-    <article className="video" >
+    <div className="video" >
       <div className="video__leftSection">
         <img
           className="video__leftSection--image"
@@ -17,7 +17,7 @@ function Video(props) {
         <p className="video__rightSection--title">{props.title}</p>
         <h3 className="video__rightSection--channel">{props.channel}</h3>
       </div>
-    </article>
+    </div>
     </Link>
   );
 }
